@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="Breek"><meta name="renderer" content="webkit"><meta name="copyright" content="Breek"><meta name="keywords" content="Listen"><meta name="description" content="Take your time"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/js/love.js"></script><title>““获取电信光猫的超管 · Breek’sBlog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/zzsv.github.io/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+  "use strict";
+  // rel=preload support test
+  if( !w.loadCSS ){
+    w.loadCSS = function(){};
+  }
+  // define on the loadCSS obj
+  var rp = loadCSS.relpreload = {};
+  // rel=preload feature support test
+  // runs once and returns a function for compat purposes
+  rp.support = (function(){
+    var ret;
+    try {
+      ret = w.document.createElement( "link" ).relList.supports( "preload" );
+    } catch (e) {
+      ret = false;
+    }
+    return function(){
+      return ret;
+    };
+  })();
+
+  // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+  // then change that media back to its intended value on load
+  rp.bindMediaToggle = function( link ){
+    // remember existing media attr for ultimate state, or default to 'all'
+    var finalMedia = link.media || "all";
+
+    function enableStylesheet(){
+      link.media = finalMedia;
+    }
+
+    // bind load handlers to enable media
+    if( link.addEventListener ){
+      link.addEventListener( "load", enableStylesheet );
+    } else if( link.attachEvent ){
+      link.attachEvent( "onload", enableStylesheet );
+    }
+
+    // Set rel and non-applicable media type to start an async request
+    // note: timeout allows this to happen async to let rendering continue in IE
+    setTimeout(function(){
+      link.rel = "stylesheet";
+      link.media = "only x";
+    });
+    // also enable media after 3 seconds,
+    // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+    setTimeout( enableStylesheet, 3000 );
+  };
+
+  // loop through link elements in DOM
+  rp.poly = function(){
+    // double check this to prevent external calls from running
+    if( rp.support() ){
+      return;
+    }
+    var links = w.document.getElementsByTagName( "link" );
+    for( var i = 0; i < links.length; i++ ){
+      var link = links[ i ];
+      // qualify links to those with rel=preload and as=style attrs
+      if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+        // prevent rerunning on link
+        link.setAttribute( "data-loadcss", true );
+        // bind listeners to toggle media back
+        rp.bindMediaToggle( link );
+      }
+    }
+  };
+
+  // if unsupported, run the polyfill
+  if( !rp.support() ){
+    // run once at least
+    rp.poly();
+
+    // rerun poly on an interval until onload
+    var run = w.setInterval( rp.poly, 500 );
+    if( w.addEventListener ){
+      w.addEventListener( "load", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    } else if( w.attachEvent ){
+      w.attachEvent( "onload", function(){
+        rp.poly();
+        w.clearInterval( run );
+      } );
+    }
+  }
+
+
+  // commonjs
+  if( typeof exports !== "undefined" ){
+    exports.loadCSS = loadCSS;
+  }
+  else {
+    w.loadCSS = loadCSS;
+  }
+}( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/zzsv.github.io/atom.xml" title="Listen" type="application/atom+xml">
+</head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/zzsv.github.io/img/assets/cat.png"></div><!--.profile-saying
+  i.fa.fa-comment
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">Breek</div><div class="profile-signature">for us</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/breeks17?tab=repositories" target="_black">friendA</a></span><span><a href="//github.com/Zzsv?tab=repositories" target="_black">friendB</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">““获取电信光猫的超管</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2020-08-20</span></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><p><img src="/zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/dx.jpg" alt="分享美图"><br>#注：本方法仅测试了电信，且开放了telnet端口的光猫。<br>#准备工作</p>
+<ol>
+<li>一台接入内网的电脑</li>
+<li>为自己的电脑安装telent客户端，<a href="https://jingyan.baidu.com/article/48206aea9e0d8d216bd6b358.html" target="_blank" rel="noopener">参考链接</a>;win10同理</li>
+<li>ctrl c and ctrl v和那么一丢丢电脑基础知识<br>#获取密码</li>
+<li>打开dos命令行输入<code>telnet 192.168.1.1</code>，ip为你的光猫的地址</li>
+<li>输入账户：root，密码：admin 页面显示<WAP></WAP></li>
+<li>输入命令<code>shell</code>进入linux操作界面 会出现#号，说明成功进入</li>
+<li>输入命令<code>cd/mnt/jffs2</code>进入到此文件夹，可以使用<code>pwd</code>命令查看是否在当前路径</li>
+<li>输入命令<code>cp hw_ctree.xml myconf.xml.gz</code>  将hw_ctree.xml复制且重命名未myconf.xml.gz</li>
+<li>输入命令<code>aescrypt2 1 myconf.xml.gz tmp</code>  将myconf文件进行解密</li>
+<li>输入命令<code>gzip -d myconf.xml.gz</code> 将该文件解压</li>
+<li>输入命令<code>grep &quot;password&quot; myconf.xml</code>  查看密码用户名一般为telecomadmin，密码为telecomadmin后面加8位数字</li>
+<li>以上命令 从第五条开始都不会有提示，若提示错误，请自行解决。<br>##<br>获取超管后可以进行web登录，使用查看源代码的方法找到宽带账户密码。<br>#总结<br>网上的教程也有类似的，刚开始弄得时候，没注意文件名，无脑复制。还是要<strong>细心</strong>才行。</li>
+</ol>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1423241987&auto=1&height=66"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+</article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://zzsv.github.io">Breek</a></p><p> <span>Link:  </span><a href="https://zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/">https://zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/3.0" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="nextSlogan" href="/zzsv.github.io/2020/07/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/" title="博客搭建成功纪念一下！"><span>NextPost ></span><br><span class="nextTitle">博客搭建成功纪念一下！</span></a><div class="clear"></div></div><div id="comment"><div id="container"></div><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({
+  id: '““获取电信光猫的超管',
+  owner: 'Zzsv',
+  repo: 'blog_pl',
+  oauth: {
+    client_id: '3e9a705c2b5f9f26d5b4',
+    client_secret: '2ddec7d3e4ba85a52566d70b4486e6b09ec4be6d',
+  },
+})
+gitment.render('container')</script></div></section></article><footer id="cxo-footer-outer"><div id="cxo-footer-inner"><p class="footer-container"><span>Back to </span><a href="https://zbshy.cf" target="_blank" rel="noopener"><span>Breek</span></a><span> | Contact </span><a href="https://twitter.com/breek_shy" target="_blank" rel="noopener"><span>Twitter</span></a></p><i class="fa fa-user"> </i><span id="busuanzi_value_site_uv"></span><span> | </span><i class="fa fa-eye"> </i><span id="busuanzi_value_site_pv"></span></div></footer><!-- catelog--><!-- top--><i class="fa fa-arrow-up close" id="go-up" aria-hidden="true"></i></body></html>
