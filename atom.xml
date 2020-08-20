@@ -6,7 +6,7 @@
   <link href="/zzsv.github.io/atom.xml" rel="self"/>
   
   <link href="https://zzsv.github.io/"/>
-  <updated>2020-08-20T02:32:08.407Z</updated>
+  <updated>2020-08-20T03:36:23.592Z</updated>
   <id>https://zzsv.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>““获取电信光猫的超管</title>
+    <title>获取电信光猫的超管</title>
     <link href="https://zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/"/>
     <id>https://zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/</id>
     <published>2020-08-20T01:59:18.000Z</published>
-    <updated>2020-08-20T02:32:08.407Z</updated>
+    <updated>2020-08-20T03:36:23.592Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\zzsv.github.io\assets\css\APlayer.min.css"><script src="\zzsv.github.io\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/dx.jpg" alt="分享美图"><br>#注：本方法仅测试了电信，且开放了telnet端口的光猫。<br>#准备工作</p><ol><li>一台接入内网的电脑</li><li>为自己的电脑安装telent客户端，<a href="https://jingyan.baidu.com/article/48206aea9e0d8d216bd6b358.html" target="_blank" rel="noopener">参考链接</a>;win10同理</li><li>ctrl c and ctrl v和那么一丢丢电脑基础知识<br>#获取密码</li><li>打开dos命令行输入<code>telnet 192.168.1.1</code>，ip为你的光猫的地址</li><li>输入账户：root，密码：admin 页面显示<WAP></WAP></li><li>输入命令<code>shell</code>进入linux操作界面 会出现#号，说明成功进入</li><li>输入命令<code>cd/mnt/jffs2</code>进入到此文件夹，可以使用<code>pwd</code>命令查看是否在当前路径</li><li>输入命令<code>cp hw_ctree.xml myconf.xml.gz</code>  将hw_ctree.xml复制且重命名未myconf.xml.gz</li><li>输入命令<code>aescrypt2 1 myconf.xml.gz tmp</code>  将myconf文件进行解密</li><li>输入命令<code>gzip -d myconf.xml.gz</code> 将该文件解压</li><li>输入命令<code>grep &quot;password&quot; myconf.xml</code>  查看密码用户名一般为telecomadmin，密码为telecomadmin后面加8位数字</li><li>以上命令 从第五条开始都不会有提示，若提示错误，请自行解决。<br>##<br>获取超管后可以进行web登录，使用查看源代码的方法找到宽带账户密码。<br>#总结<br>网上的教程也有类似的，刚开始弄得时候，没注意文件名，无脑复制。还是要<strong>细心</strong>才行。</li></ol><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1423241987&auto=1&height=66"></iframe>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\zzsv.github.io\assets\css\APlayer.min.css"><script src="\zzsv.github.io\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/dx.jpg" alt="分享美图"></p><h1 id="注：本方法仅测试了电信，且开放了telnet端口的光猫。"><a href="#注：本方法仅测试了电信，且开放了telnet端口的光猫。" class="headerlink" title="注：本方法仅测试了电信，且开放了telnet端口的光猫。"></a>注：本方法仅测试了电信，且开放了telnet端口的光猫。</h1><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol><li><p>一台接入内网的电脑</p></li><li><p>为自己的电脑安装telent客户端，<a href="https://jingyan.baidu.com/article/48206aea9e0d8d216bd6b358.html" target="_blank" rel="noopener">参考链接</a>;win10同理</p></li><li><p>ctrl c and ctrl v和那么一丢丢电脑基础知识</p><h1 id="获取密码"><a href="#获取密码" class="headerlink" title="获取密码"></a>获取密码</h1></li><li><p>打开dos命令行输入<code>telnet 192.168.1.1</code>，ip为你的光猫的地址</p></li><li><p>输入账户：root，密码：admin 页面显示<WAP></WAP></p></li><li><p>输入命令<code>shell</code>进入linux操作界面 会出现#号，说明成功进入</p></li><li><p>输入命令<code>cd/mnt/jffs2</code>进入到此文件夹，可以使用<code>pwd</code>命令查看是否在当前路径</p></li><li><p>输入命令<code>cp hw_ctree.xml myconf.xml.gz</code>  将hw_ctree.xml复制且重命名未myconf.xml.gz</p></li><li><p>输入命令<code>aescrypt2 1 myconf.xml.gz tmp</code>  将myconf文件进行解密</p></li><li><p>输入命令<code>gzip -d myconf.xml.gz</code> 将该文件解压</p></li><li><p>输入命令<code>grep &quot;password&quot; myconf.xml</code>  查看密码用户名一般为telecomadmin，密码为telecomadmin后面加8位数字</p></li><li><p>以上命令 从第五条开始都不会有提示，若提示错误，请自行解决。</p></li></ol><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>获取超管后可以进行web登录，使用查看源代码的方法找到宽带账户密码。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>网上的教程也有类似的，刚开始弄得时候，没注意文件名，无脑复制。还是要<strong>细心</strong>才行。</p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1423241987&auto=1&height=66"></iframe>]]></content>
     
     <summary type="html">
     
@@ -43,7 +43,7 @@
     <link href="https://zzsv.github.io/2020/07/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/"/>
     <id>https://zzsv.github.io/2020/07/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/</id>
     <published>2020-07-17T01:16:41.000Z</published>
-    <updated>2020-07-19T08:37:54.534Z</updated>
+    <updated>2020-08-20T03:36:43.036Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\zzsv.github.io\assets\css\APlayer.min.css"><script src="\zzsv.github.io\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/zzsv.github.io/2020/07/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/whzyn.jpg" alt="我好钟意你"></p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>  去年的匆匆毕业，7月份入职杭州，如今也已经一年了，也不知道怎么就来了杭州，也许是对南方的憧憬，也许是随波大流。慢慢发现个问题，也是岁数大了，学了什么东西，一旦不经常用，都会慢慢忘记，所以总想着找个方法去解决这个问题，看到同事搭建了博客，觉得不错，于是心中也萌生了搭建博客的想法，但是一直也未付诸行动；这次决定搞一下。</p><h1 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h1><p>  有实力才会自信，我反正是这么感觉的，喜欢那些大佬对待问题侃侃而谈。也深知他们在背后下的努力。要学的太多，性子又比较急；所以要每天告诉自己：<br>  <strong>不要急，慢慢来！</strong>  <strong>不要急，慢慢来！</strong>  <strong>不要急，慢慢来！</strong></p><h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><p>  暂时还不会在段落前进行缩进。。。<del>哈哈哈</del>    </p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="420" height="86" src="//music.163.com/outchain/player?type=2&id=436668683&auto=1&height=66"></iframe>]]></content>
     

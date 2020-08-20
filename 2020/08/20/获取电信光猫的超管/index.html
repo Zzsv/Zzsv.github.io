@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="Breek"><meta name="renderer" content="webkit"><meta name="copyright" content="Breek"><meta name="keywords" content="Listen"><meta name="description" content="Take your time"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/js/love.js"></script><title>““获取电信光猫的超管 · Breek’sBlog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/zzsv.github.io/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><meta name="author" content="Breek"><meta name="renderer" content="webkit"><meta name="copyright" content="Breek"><meta name="keywords" content="Listen"><meta name="description" content="Take your time"><meta name="Cache-Control" content="no-cache"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="/js/love.js"></script><title>获取电信光猫的超管 · Breek’sBlog</title><link rel="stylesheet" href="/css/style.css?v=2018.7.9"><link rel="stylesheet" href="/css/animation.css?v=2018.7.9"><link rel="icon" href="/zzsv.github.io/img/assets/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.6"><!-- scripts--><script>(function( w ){
   "use strict";
   // rel=preload support test
   if( !w.loadCSS ){
@@ -98,21 +98,35 @@
 }( typeof global !== "undefined" ? global : this ) );</script><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script><script src="/js/main.js?v=2018.7.9" defer></script><!-- fancybox--><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script><!-- busuanzi--><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/zzsv.github.io/atom.xml" title="Listen" type="application/atom+xml">
 </head><body><section class="profile-close" id="cxo-profile"><div class="profile-avatar"><i class="fa fa-caret-left"></i><img src="/zzsv.github.io/img/assets/cat.png"></div><!--.profile-saying
   i.fa.fa-comment
-  .saying--><div class="cxo-profile-inner"><div class="profile-name">Breek</div><div class="profile-signature">for us</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/breeks17?tab=repositories" target="_black">friendA</a></span><span><a href="//github.com/Zzsv?tab=repositories" target="_black">friendB</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">““获取电信光猫的超管</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2020-08-20</span></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><p><img src="/zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/dx.jpg" alt="分享美图"><br>#注：本方法仅测试了电信，且开放了telnet端口的光猫。<br>#准备工作</p>
-<ol>
-<li>一台接入内网的电脑</li>
-<li>为自己的电脑安装telent客户端，<a href="https://jingyan.baidu.com/article/48206aea9e0d8d216bd6b358.html" target="_blank" rel="noopener">参考链接</a>;win10同理</li>
-<li>ctrl c and ctrl v和那么一丢丢电脑基础知识<br>#获取密码</li>
-<li>打开dos命令行输入<code>telnet 192.168.1.1</code>，ip为你的光猫的地址</li>
-<li>输入账户：root，密码：admin 页面显示<WAP></WAP></li>
-<li>输入命令<code>shell</code>进入linux操作界面 会出现#号，说明成功进入</li>
-<li>输入命令<code>cd/mnt/jffs2</code>进入到此文件夹，可以使用<code>pwd</code>命令查看是否在当前路径</li>
-<li>输入命令<code>cp hw_ctree.xml myconf.xml.gz</code>  将hw_ctree.xml复制且重命名未myconf.xml.gz</li>
-<li>输入命令<code>aescrypt2 1 myconf.xml.gz tmp</code>  将myconf文件进行解密</li>
-<li>输入命令<code>gzip -d myconf.xml.gz</code> 将该文件解压</li>
-<li>输入命令<code>grep &quot;password&quot; myconf.xml</code>  查看密码用户名一般为telecomadmin，密码为telecomadmin后面加8位数字</li>
-<li>以上命令 从第五条开始都不会有提示，若提示错误，请自行解决。<br>##<br>获取超管后可以进行web登录，使用查看源代码的方法找到宽带账户密码。<br>#总结<br>网上的教程也有类似的，刚开始弄得时候，没注意文件名，无脑复制。还是要<strong>细心</strong>才行。</li>
+  .saying--><div class="cxo-profile-inner"><div class="profile-name">Breek</div><div class="profile-signature">for us</div><div class="friends"><div>FRIENDS</div><span><a href="//github.com/breeks17?tab=repositories" target="_black">friendA</a></span><span><a href="//github.com/Zzsv?tab=repositories" target="_black">friendB</a></span></div><div class="read-progress"></div></div></section><header id="cxo-intro" style="height: 70vh;background-image: url(/img/intro/index-bg.png);"><nav id="cxo-intro-nav"><section><div class="intro-nav-title"><a href="/">Blog</a></div><div class="intro-nav-label-box"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div><i class="fa fa-bars intro-nav-menu"><div class="intro-nav-drop"><a href="/">Home</a><a href="/about/">About</a><a href="/archives/">Archives</a><a href="/tags/">Tags</a></div></i><div class="clear"></div></section></nav><h1 class="post-title">获取电信光猫的超管</h1><div class="post-intros"><div class="post-intro-meta"><span class="post-intro-time"><i class="post-intro-calendar fa fa-calendar"></i><span>2020-08-20</span></span></div></div></header><article class="cxo-up" id="cxo-content-outer"><section id="cxo-content-inner"><article class="article-entry" id="post"><p><img src="/zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/dx.jpg" alt="分享美图"></p>
+<h1 id="注：本方法仅测试了电信，且开放了telnet端口的光猫。"><a href="#注：本方法仅测试了电信，且开放了telnet端口的光猫。" class="headerlink" title="注：本方法仅测试了电信，且开放了telnet端口的光猫。"></a>注：本方法仅测试了电信，且开放了telnet端口的光猫。</h1><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
+<li><p>一台接入内网的电脑</p>
+</li>
+<li><p>为自己的电脑安装telent客户端，<a href="https://jingyan.baidu.com/article/48206aea9e0d8d216bd6b358.html" target="_blank" rel="noopener">参考链接</a>;win10同理</p>
+</li>
+<li><p>ctrl c and ctrl v和那么一丢丢电脑基础知识</p>
+<h1 id="获取密码"><a href="#获取密码" class="headerlink" title="获取密码"></a>获取密码</h1></li>
+<li><p>打开dos命令行输入<code>telnet 192.168.1.1</code>，ip为你的光猫的地址</p>
+</li>
+<li><p>输入账户：root，密码：admin 页面显示<WAP></WAP></p>
+</li>
+<li><p>输入命令<code>shell</code>进入linux操作界面 会出现#号，说明成功进入</p>
+</li>
+<li><p>输入命令<code>cd/mnt/jffs2</code>进入到此文件夹，可以使用<code>pwd</code>命令查看是否在当前路径</p>
+</li>
+<li><p>输入命令<code>cp hw_ctree.xml myconf.xml.gz</code>  将hw_ctree.xml复制且重命名未myconf.xml.gz</p>
+</li>
+<li><p>输入命令<code>aescrypt2 1 myconf.xml.gz tmp</code>  将myconf文件进行解密</p>
+</li>
+<li><p>输入命令<code>gzip -d myconf.xml.gz</code> 将该文件解压</p>
+</li>
+<li><p>输入命令<code>grep &quot;password&quot; myconf.xml</code>  查看密码用户名一般为telecomadmin，密码为telecomadmin后面加8位数字</p>
+</li>
+<li><p>以上命令 从第五条开始都不会有提示，若提示错误，请自行解决。</p>
+</li>
 </ol>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>获取超管后可以进行web登录，使用查看源代码的方法找到宽带账户密码。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>网上的教程也有类似的，刚开始弄得时候，没注意文件名，无脑复制。还是要<strong>细心</strong>才行。</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1423241987&auto=1&height=66"></iframe>
 
 
@@ -126,7 +140,7 @@
 
 
 </article><!-- lincense--><div class="license-wrapper"><p> <span>Author:  </span><a href="https://zzsv.github.io">Breek</a></p><p> <span>Link:  </span><a href="https://zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/">https://zzsv.github.io/2020/08/20/%E8%8E%B7%E5%8F%96%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E8%B6%85%E7%AE%A1/</a></p><p> <span>Copyright:  </span><span>All articles in this blog are licensed under <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/3.0" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.</span></p></div><div class="post-paginator"><a class="nextSlogan" href="/zzsv.github.io/2020/07/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F/" title="博客搭建成功纪念一下！"><span>NextPost ></span><br><span class="nextTitle">博客搭建成功纪念一下！</span></a><div class="clear"></div></div><div id="comment"><div id="container"></div><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({
-  id: '““获取电信光猫的超管',
+  id: '获取电信光猫的超管',
   owner: 'Zzsv',
   repo: 'blog_pl',
   oauth: {
